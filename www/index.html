@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--- dev version --->
+<html>
+    <head>
+        <title>Scontrino Demo</title>
+        <meta charset="utf-8"/>       
+        <script type="text/javascript"></script>
+        <script data-main="app" src="lib/require.js"></script>
+        <link href="css/jquery-ui.css" rel="stylesheet">
+        <link href="css/jquery-ui.theme.css" rel="stylesheet"/>
+        <link href="css/ui.jqgrid.css" rel="stylesheet"/>
+        <!-- link href="css/jqModal.css" rel="stylesheet"/ -->
+        <link href="css/jquery.multiselect.css" rel="stylesheet"/>
+        <link href="css/jquery.multiselect.filter.css" rel="stylesheet"/>
+        <link href="css/precept.css" rel="stylesheet"/>
+        
+        <!-- link rel="icon" type="image/ico" href="img/favicon.ico" /-->
+     <img id="logo" src="img/logo.png" style="max-width:100px;height:auto;"></img>
+    </head>
+    <body>
+
+     <div id="tabs">
+      <ul>
+		<li><a href="#tabs-1">Inbox</a></li>
+		<li><a href="#tabs-2">Settings</a></li>
+		<li><a href="#tabs-3">Tests</a></li>
+      </ul>
+
+      <div id="tabs-1">
+       <h2>Inbox (raw)</h2>
+       <p>
+       Tests incoming email attachemt to cloudstore to OCR to cloudsql flow.
+       </p>
+       <div id="inbox_table_container">
+        <table id="inbox_table"></table id="inbox_table">
+        <div id="inbox_pager"></div id="inbox_pager">
+       </div id="inbox_table_container">
+
+       <img id="receipt" src="https://storage.googleapis.com/scontrino-194211.appspot.com/barcataxi.jpg" style="max-width:200px;height:auto;"></img>
+       
+      </div id="tabs-1">
+
+
+      <div id="tabs-2"> 
+       <h2>Misc. settings</h2>
+       <div id="switcher"></div id="switcher">
+      </div id="tabs-2">
+      
+      <div id="tabs-3"> 
+       <h2>test harnesses and misc. tables</h2>
+      </div id="tabs-3">
+     </div id="tabs">
+    </body>
+</html>

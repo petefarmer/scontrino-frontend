@@ -1,0 +1,107 @@
+/*
+.ui-widget {
+  font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+  font-size: 1.1em;
+}
+.ui-widget .ui-widget {
+  font-size: 1em;
+}
+*/
+img.logo {
+  width: auto;
+  height: auto;
+  max-width: 50px;
+}
+
+.pdficon {
+  width: auto;
+  height: auto;
+  max-width: 40px;
+}
+
+
+/* .ui-jqgrid {font-size: 0.4em;} */
+.ui-jqgrid .ui-jqgrid-bdiv { overflow-y: scroll }
+body {font-size:0.9em;}
+form {font-size:0.9em;}
+table {font-size:1.1em;}
+#logo {width:200px;}
+
+#basket {height:auto;width:auto;}
+
+/* .ui-front {z-index:100 !important;} */
+
+#tabs {
+ height:auto;
+}
+#tabs-2 {
+ position:relative;
+}
+#products {
+ float:left;
+ width:400px;
+ font-size:1em;
+ padding:0px;
+}
+#product_details {
+ float:left;
+ width:0px;
+ height:0px;
+ padding:0px 0px 0px 0px;
+}
+#folders {
+ float:right;
+ width:200px;
+ font-size:1em;
+ padding:0px;
+}
+#jabberwock {
+ clear:both;
+}
+
+#tabs-9 {
+ position:relative;
+}
+#SOMETHING {
+ float:right;
+ width:800px;
+ font-size:1em;
+ padding:30px;
+}
+#bandersnatch {
+ clear:both;
+}
+#leveraged_return {
+ float:right;
+}
+
+.ui-menu {
+ width:150px;
+}
+.ui-menu .ui-menu{
+ width:150px;
+}
+
+#underlyingid {
+ width:130px;
+}
+
+#tabs-4 {
+ position:relative;
+}
+#rules {
+ float:left;
+ width:500px;
+ font-size:1em;
+ padding:20px;
+}
+#rulegroups {
+ float:right;
+ width:500px;
+ font-size:1em;
+ padding:20px 0px 0px 0px;
+}
+
+#jubjubbird {
+ clear:both;
+}

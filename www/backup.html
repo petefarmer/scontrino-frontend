@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--- dev version --->
+<html>
+    <head>
+        <title>Scontrino Demo</title>
+        <meta charset="utf-8"/>       
+        <script type="text/javascript"></script>
+        <script data-main="app" src="lib/require.js"></script>
+        <link href="css/jquery-ui.css" rel="stylesheet">
+        <link href="css/jquery-ui.theme.css" rel="stylesheet"/>
+        <link href="css/ui.jqgrid.css" rel="stylesheet"/>
+        <!-- link href="css/jqModal.css" rel="stylesheet"/ -->
+        <link href="css/jquery.multiselect.css" rel="stylesheet"/>
+        <link href="css/jquery.multiselect.filter.css" rel="stylesheet"/>
+        <link href="css/precept.css" rel="stylesheet"/>
+        
+        <!-- link rel="icon" type="image/ico" href="img/favicon.ico" /-->
+     <img id="logo" src="img/preceptlogo.png" style="max-width:100px;height:auto;"></img>
+    </head>
+    <body>
+
+     <div id="tabs">
+      <ul>
+		<li><a href="#tabs-1">Inbox</a></li>
+		<li><a href="#tabs-6">Settings</a></li>
+		<li><a href="#tabs-7">Tests</a></li>
+      </ul>
+
+      <div id="tabs-1">
+       <h2>Inbox (raw)</h2>
+       <p>
+       Tests incoming email attachemt to cloudstore to OCR to cloudsql flow.
+       </p>
+       <div id="inboxContainer">
+        <p>
+        </p>
+       <div id="inbox_table_container">
+        <table id="inbox_table"></table id="inbox_table">
+        <div id="inbox_pager"></div id="inbox_pager">
+       </div id="inbox_table_container">
+       
+        <button id="runMLM2Button" class="ui-button ui-widget ui-corner-all">Run MLM</button>
+
+       <div id="runMLM2ButtonDialog">
+        <div id="runMLM2ButtonDialogText"></div id="runMLM2ButtonDialogText">
+       </div id="runMLM2ButtonDialog">
+
+      </div id="tabs-1">
+
+      <div id="tabs-1a">
+
+       <h2>SIRS/SEPSIS</h2>
+       <p>
+       Besides  checking for the  most  recent  patient  ID  entry, this  MLM  also  checks for overalerting. If the definition for sending a SIRS alert is met by the most recent data, the MLM checks all    entries of the last 24 hours. I f one of these entries also meets the SIRS criteria ,  no alert is sent. This ensures that the MLM sends not more than one alert per 24 hours . 
+       </p>
+       <div id="mlm4PDFContainer">
+        <p>
+        Inspect the MLM here:
+        <a download href="./pdf/SIRSnotification4.pdf">SIRSnotification4.mlm<img class="pdficon" src="./img/adobe-pdf-icon.svg"></a>
+       </div id="mlm4PDFContainer">
+        </p>
+       <div id="sirs2_table_container">
+        <table id="sirs2_table"></table id="drg_table">
+        <div id="sirs2_pager"></div id="drg_pager">
+       </div id="sirs2_table_container">
+
+       <div id="patientMenuContainer"></div id="patientMenuContainer">
+
+        <button id="runMLM4Button" class="ui-button ui-widget ui-corner-all">Run MLM</button>
+       <div id="runMLM4ButtonDialog">
+        <div id="runMLM4ButtonDialogText"></div id="runMLM4ButtonDialogText">
+       </div id="runMLM4ButtonDialog">
+
+      </div id="tabs-1a">
+
+      <div id="tabs-2"> 
+       <h2>CLABSI/NOSOCOMIAL</h2>
+       <p>
+        Shall I write some MLMs? I've found a reasonable set of criteria I can use:
+        <a href="https://www.jointcommission.org/assets/1/6/CLABSI_Toolkit_Tool_5-4_Surveillance_Form_1_F.pdf">CLABSI parameters from jointcommision.org</a>
+       </p>
+       <p>
+       or
+       </p>
+       <p>
+      ...shall we evaluate Medexter’s MOMO and MONI products. To set up a test deployment for a
+      demo I <think> I will need an Oracle license. Does Precept have one?
+       </p>
+      </div id="tabs-2">
+
+      <div id="tabs-3">
+       <h2>High cost medications</h2>
+       <p>
+        All I’ve got on this is the ppt from Dr Ballnus. 
+        Not enough info to build a useful db table.
+       </p>
+      </div id="tabs-3">
+      <div id="tabs-4"> 
+       <h2>SCORE Generation</h2>
+       <p>
+       I'm a bit stuck on this problem -- still researching.
+       </p>
+      
+      </div id="tabs-4">
+
+      <div id="tabs-5"> 
+       <h2>Consolidated Report</h2>
+       <p>
+        Implementation of the ppt from Alain and Dr Ballnus goes here.
+       </p>
+      </div id="tabs-5">
+
+      <div id="tabs-6"> 
+       <h2>Misc. settings</h2>
+       <div id="switcher"></div id="switcher">
+      </div id="tabs-6">
+      
+      <div id="tabs-7"> 
+       <h2>test harnesses and misc. tables</h2>
+       <div id="drg_table_container">
+        <table id="drg_table"></table id="drg_table">
+        <div id="drg_pager"></div id="drg_pager">
+       </div id="drg_table_container">
+        <button id="userActionButton" type="submit"">Run SIRS test</button>
+      </div id="tabs-7">
+     </div id="tabs">
+    </body>
+</html>
