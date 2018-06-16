@@ -23,6 +23,7 @@ define(function (require) {
     var inbox = require('./inboxTable');
     inbox.setGrid("#inbox_table");
     inbox.setPager("#inbox_pager");
+    inbox.setImageBox("#inbox_box");
     inbox.InboxTableGrid();
     $('#inbox_table_container').draggable();
     

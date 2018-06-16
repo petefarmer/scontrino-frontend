@@ -13,6 +13,11 @@
        pager = $(sel);
      },
 
+     setImageBox: function(sel) {
+       imageBox = $(sel);
+     },
+
+
      InboxTableGrid: function () {
        var formEditingOptions = {
          closeOnEscape:true,
@@ -50,6 +55,14 @@
          ondblClickRow: function(id) {
            grid.jqGrid('editGridRow',id,formEditingOptions);
          },
+	 onSelectRow: function(id) {
+	   console.log("row selected");
+           rowid = grid.jqGrid('getGridParam','selrow');
+	   row = grid.getRowData(rowid);
+	   filename = row['filename'];
+
+	   console.log("filename = ",filename);
+	 },
 //      }).navGrid(pager.selector, {
       }).navGrid('#inbox_pager', {
           add:true,
