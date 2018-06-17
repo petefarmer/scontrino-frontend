@@ -18,7 +18,7 @@ if($conn->connect_error) {
 die("Connection failed: ". $conn->connect_error);
 }
 
-$sql ="SELECT id, name, address, filename, ocr_text FROM inbox";
+$sql ="SELECT id, name, address, filename, ocr_text FROM inbox ORDER BY `id` DESC";
 $result = $conn->query($sql);
 $results = array();
 
