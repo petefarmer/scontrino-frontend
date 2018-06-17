@@ -24,8 +24,11 @@ define(function (require) {
     inbox.setGrid("#inbox_table");
     inbox.setPager("#inbox_pager");
     inbox.setImageBox("#inbox_box");
+    inbox.setImageText("#inbox_text");
     inbox.InboxTableGrid();
     $('#inbox_table_container').draggable();
+
+    $(".image_group").controlgroup();
     
     $(function() {
       var tabs = $('#tabs').tabs();
