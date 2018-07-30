@@ -11,6 +11,7 @@ if ($action == 'get') {
 }elseif($action == 'edit') {
   edit();
 }
+
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
@@ -30,13 +31,16 @@ if($result->num_rows >0) {
   echo json_encode($results);
 }
 $conn->close();
-/*
+
+
 function get() {
+/*
   $conn = mysqli_connect($servername, $username, $password, $dbname);
   if($conn->connect_error) {
   	die("Connection failed: ". $conn->connect_error);
   }
-  $query = "SELECT * FROM inbox";
+*/
+  $query = "SELECT id, name, address, filename, ocr_text FROM inbox ORDER BY `id` DESC";
   $results = array();
 
   if ($result = $conn->query($query)) {
@@ -48,7 +52,7 @@ function get() {
   echo json_encode($results);
   $conn->close();
 } 
- */
+
 function edit() {
   $mysqli = new mysqli($servername, $username, $password, $dbname);
   switch($_POST['oper']) {

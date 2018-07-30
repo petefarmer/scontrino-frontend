@@ -30,9 +30,15 @@
        return grid.jqGrid ({
 //         url: './php/inboxTable.php?action=get',
          url: './php/inboxTable.php',
-         editurl: './php/inboxTable.php?action=edit',
+//         editurl: './php/inboxTable.php?action=edit',
+         editurl: './php/inboxTable.php',
          datatype: 'json',
          method: 'POST',
+	 /*
+         postData: {
+	   action: 'get',
+         },
+	 */
          //toppager: true,
          loadonce: true,
          shrinkToFit: false,
@@ -64,15 +70,31 @@
            rowid = grid.jqGrid('getGridParam','selrow');
 	   row = grid.getRowData(rowid);
            filename = row['filename'];
+	   ext = filename.split('.').pop();
+console.log("ext = ", ext);
+	
 	   text = row['ocr_text'];
 
-           src = "https://storage.googleapis.com/scontrino-194211.appspot.com/" + filename;
-           img_html = "<img src='" + src + "' style='max-width:200px;height:auto;'></img>";
+           tmpsrc = "https://storage.googleapis.com/scontrino-194211.appspot.com/" + filename;
+           tmpsrc = tmpsrc.trim();
+           src = tmpsrc.replace(/\s/gi, "%20");
+console.log("tmpsrc = ",tmpsrc);
+           src = src.trim();
+console.log("src = ",src);
+
+
+	   if (new String(ext).valueOf() == new String("jpg").valueOf()) {
+             img_html = "<img src='" + src + "' style='max-width:200px;height:auto;'></img>";
+	   }else if (new String(ext).valueOf() == new String("pdf").valueOf()) {
+             img_html = '<object data="' + src + '" type="application/pdf" width="300" height="200"> alt : <a href="' + src + '">' + src + '</a> </object>'
+	   }
+ //            img_html = "<img src='" + src + "' style='max-width:200px;height:auto;'></img>";
 	   text_html = "<textarea style='height:200px;'>" + text + "</textarea>";
 
 	   $("#image_box").html(img_html);
 	   $("#image_text").html(text_html);
 
+	   console.log("img_html = ",img_html);
 	   console.log("filename = ",filename);
 	 },
 //      }).navGrid(pager.selector, {
